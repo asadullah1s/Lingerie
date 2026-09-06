@@ -1,9 +1,9 @@
 /* ============================================================
-   VELVET NOIR - CRIMSON PASSION THEME
-   Sexy, bold, passionate colors for intimate wear.
-   Primary: #C41E3A (Crimson Red)
-   Accent:  #D4AF37 (Gold)
-   Base:    #0D0D0D (Rich Black)
+   VELVET NOIR - CHAMPAGNE & BURGUNDY THEME
+   Warm, elegant, and sexy without being too dark.
+   Background: #F5E6D3 (Champagne)
+   Accent:     #6B1D2F (Deep Burgundy)
+   Gold:       #D4AF37
    ============================================================ */
 
 /* =========================
@@ -17,8 +17,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0D0D0D;
-    color: #F8F8F8;
+    background-color: #F5E6D3;  /* Warm champagne */
+    color: #2C1810;            /* Warm dark brown (not black) */
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -30,20 +30,22 @@ h1, h2, h3, .luxury-font {
 }
 
 /* =========================
-   COLOR VARIABLES (Crimson Passion)
+   COLOR VARIABLES (Champagne & Burgundy)
    ========================= */
 :root {
-    --crimson: #C41E3A;
-    --crimson-dark: #8B0000;
-    --crimson-light: #FF6B8A;
+    --burgundy: #6B1D2F;
+    --burgundy-dark: #4A1420;
+    --burgundy-light: #9A4B5E;
+    --champagne: #F5E6D3;
+    --champagne-dark: #E8D5C0;
     --gold: #D4AF37;
-    --black: #0D0D0D;
-    --dark-grey: #1A1A1A;
-    --soft-white: #F8F8F8;
+    --warm-brown: #2C1810;
+    --soft-white: #FDF8F3;
     --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
 
-    /* Legacy support for HTML classes */
-    --rose-gold: var(--crimson);
+    /* Legacy support */
+    --rose-gold: var(--burgundy);
+    --crimson: var(--burgundy);
 }
 
 /* =========================
@@ -53,10 +55,10 @@ h1, h2, h3, .luxury-font {
     width: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: #222;
+    background: #E8D5C0;
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--crimson);
+    background: var(--burgundy);
     border-radius: 10px;
 }
 
@@ -69,7 +71,7 @@ h1, h2, h3, .luxury-font {
     left: 0;
     width: 0%;
     height: 3px;
-    background: var(--crimson);
+    background: var(--burgundy);
     z-index: 9999;
     transition: width 0.05s linear;
 }
@@ -81,7 +83,7 @@ h1, h2, h3, .luxury-font {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: var(--crimson);
+    background: var(--burgundy);
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -93,16 +95,16 @@ h1, h2, h3, .luxury-font {
     visibility: hidden;
     transition: 0.3s;
     z-index: 99;
-    box-shadow: 0 5px 20px rgba(196, 30, 58, 0.4);
+    box-shadow: 0 5px 20px rgba(107, 29, 47, 0.3);
 }
 .back-to-top.show {
     opacity: 1;
     visibility: visible;
 }
 .back-to-top:hover {
-    background: var(--crimson-dark);
+    background: var(--burgundy-dark);
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.6);
+    box-shadow: 0 8px 25px rgba(107, 29, 47, 0.4);
 }
 
 /* =========================
@@ -122,7 +124,7 @@ h1, h2, h3, .luxury-font {
     color: #fff;
     font-size: 28px;
     z-index: 99;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     text-decoration: none;
     transition: 0.2s;
 }
@@ -133,24 +135,24 @@ h1, h2, h3, .luxury-font {
 }
 
 /* =========================
-   NAVBAR
+   NAVBAR - Glass effect on warm background
    ========================= */
 .navbar {
-    background: rgba(13, 13, 13, 0.92);
+    background: rgba(245, 230, 211, 0.92);
     backdrop-filter: blur(12px);
     padding: 0.8rem 0;
     transition: 0.3s;
-    border-bottom: 1px solid rgba(196, 30, 58, 0.15);
+    border-bottom: 1px solid rgba(107, 29, 47, 0.12);
 }
 .navbar.scrolled {
-    background: rgba(13, 13, 13, 0.98);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    background: rgba(245, 230, 211, 0.98);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 .navbar-brand .brand-text {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--crimson);
+    color: var(--burgundy);
     margin-left: 8px;
 }
 .navbar-brand img {
@@ -158,7 +160,7 @@ h1, h2, h3, .luxury-font {
     width: auto;
 }
 .nav-link {
-    color: #ccc !important;
+    color: #4A3A30 !important;
     font-weight: 400;
     letter-spacing: 0.03em;
     margin: 0 0.5rem;
@@ -166,7 +168,7 @@ h1, h2, h3, .luxury-font {
     transition: var(--transition);
 }
 .nav-link:hover {
-    color: var(--crimson) !important;
+    color: var(--burgundy) !important;
 }
 .nav-link::after {
     content: '';
@@ -175,17 +177,17 @@ h1, h2, h3, .luxury-font {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--crimson);
+    background: var(--burgundy);
     transition: 0.3s;
 }
 .nav-link:hover::after {
     width: 100%;
 }
 .navbar-toggler {
-    border-color: var(--crimson);
+    border-color: var(--burgundy);
 }
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(196,30,58,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%236B1D2F' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* =========================
@@ -214,8 +216,7 @@ h1, h2, h3, .luxury-font {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Sexy crimson gradient overlay */
-    background: linear-gradient(135deg, rgba(13, 13, 13, 0.75) 0%, rgba(196, 30, 58, 0.25) 50%, rgba(13, 13, 13, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(44, 24, 16, 0.6) 0%, rgba(107, 29, 47, 0.25) 50%, rgba(44, 24, 16, 0.4) 100%);
     display: flex;
     align-items: center;
     z-index: 1;
@@ -227,30 +228,30 @@ h1, h2, h3, .luxury-font {
 .banner-overlay .eyebrow {
     font-size: 0.8rem;
     letter-spacing: 5px;
-    color: var(--crimson-light);
-    background: rgba(0, 0, 0, 0.5);
+    color: var(--champagne);
+    background: rgba(107, 29, 47, 0.5);
     padding: 0.3rem 1.5rem;
     border-radius: 40px;
     display: inline-block;
     backdrop-filter: blur(4px);
     margin-bottom: 1rem;
-    border: 1px solid rgba(196, 30, 58, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .banner-overlay h1 {
     font-size: 4.5rem;
     color: #fff;
-    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
     font-weight: 700;
 }
 .banner-overlay h1 span {
-    color: var(--crimson);
+    color: var(--champagne);
 }
 .banner-overlay p {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     max-width: 500px;
     margin-bottom: 1.5rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================
@@ -258,7 +259,7 @@ h1, h2, h3, .luxury-font {
    ========================= */
 .btn-luxury {
     background: transparent;
-    border: 2px solid var(--crimson);
+    border: 2px solid var(--burgundy);
     color: #fff;
     padding: 12px 40px;
     border-radius: 40px;
@@ -268,14 +269,15 @@ h1, h2, h3, .luxury-font {
     font-weight: 600;
     letter-spacing: 0.5px;
     font-size: 1rem;
-    box-shadow: 0 0 20px rgba(196, 30, 58, 0.2);
+    backdrop-filter: blur(4px);
+    background: rgba(107, 29, 47, 0.15);
 }
 .btn-luxury:hover {
-    background: var(--crimson);
+    background: var(--burgundy);
     color: #fff;
-    border-color: var(--crimson);
+    border-color: var(--burgundy);
     transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(196, 30, 58, 0.45);
+    box-shadow: 0 10px 35px rgba(107, 29, 47, 0.35);
 }
 .btn-luxury i {
     transition: 0.3s;
@@ -289,7 +291,7 @@ h1, h2, h3, .luxury-font {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
     font-size: 2rem;
     z-index: 2;
     animation: bounce 2s infinite;
@@ -311,37 +313,37 @@ h1, h2, h3, .luxury-font {
     background: transparent !important;
 }
 .input-group-text i {
-    color: var(--crimson) !important;
+    color: var(--burgundy) !important;
 }
 #searchInput {
     background: transparent !important;
-    color: #fff !important;
-    border-bottom: 2px solid #333 !important;
+    color: var(--warm-brown) !important;
+    border-bottom: 2px solid #D4C4B8 !important;
     border-radius: 0 !important;
 }
 #searchInput:focus {
-    border-bottom-color: var(--crimson) !important;
+    border-bottom-color: var(--burgundy) !important;
     box-shadow: none !important;
 }
 #searchInput::placeholder {
-    color: #666;
+    color: #B0A094;
 }
 
 .category-filter-btn {
-    border-color: #444;
-    color: #ccc;
+    border-color: #D4C4B8;
+    color: var(--warm-brown);
     transition: var(--transition);
     background: transparent;
 }
 .category-filter-btn:hover {
-    border-color: var(--crimson);
-    color: var(--crimson);
+    border-color: var(--burgundy);
+    color: var(--burgundy);
 }
 .category-filter-btn.active-filter {
-    background: var(--crimson);
+    background: var(--burgundy);
     color: #fff;
-    border-color: var(--crimson);
-    box-shadow: 0 5px 20px rgba(196, 30, 58, 0.35);
+    border-color: var(--burgundy);
+    box-shadow: 0 5px 20px rgba(107, 29, 47, 0.25);
 }
 
 /* =========================
@@ -349,7 +351,7 @@ h1, h2, h3, .luxury-font {
    ========================= */
 .section-title {
     font-size: 2.4rem;
-    color: #fff;
+    color: var(--warm-brown);
     position: relative;
     display: inline-block;
 }
@@ -360,27 +362,27 @@ h1, h2, h3, .luxury-font {
     left: 0;
     width: 60px;
     height: 3px;
-    background: var(--crimson);
-    box-shadow: 0 0 15px rgba(196, 30, 58, 0.3);
+    background: var(--burgundy);
 }
 
 /* =========================
    PRODUCT CARDS
    ========================= */
 .product-card {
-    background: var(--dark-grey);
+    background: #FFFFFF;
     border-radius: 20px;
     overflow: hidden;
     transition: var(--transition);
-    border: 1px solid rgba(196, 30, 58, 0.12);
+    border: 1px solid rgba(107, 29, 47, 0.08);
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 .product-card:hover {
     transform: translateY(-10px);
-    border-color: var(--crimson);
-    box-shadow: 0 25px 50px rgba(196, 30, 58, 0.15);
+    border-color: var(--burgundy);
+    box-shadow: 0 25px 50px rgba(107, 29, 47, 0.12);
 }
 
 .card-img-top {
@@ -397,8 +399,8 @@ h1, h2, h3, .luxury-font {
 }
 
 .category-badge {
-    background: rgba(196, 30, 58, 0.15);
-    color: var(--crimson);
+    background: rgba(107, 29, 47, 0.08);
+    color: var(--burgundy);
     font-size: 0.65rem;
     padding: 4px 14px;
     border-radius: 40px;
@@ -409,17 +411,17 @@ h1, h2, h3, .luxury-font {
 .price {
     font-weight: 700;
     font-size: 1.3rem;
-    color: var(--crimson);
+    color: var(--burgundy);
     font-family: 'Inter', sans-serif;
 }
 .card-title {
-    color: #fff;
+    color: var(--warm-brown);
     font-size: 1rem;
 }
 .product-code {
     font-size: 0.7rem;
-    color: #888;
-    background: #2a2a2a;
+    color: #B0A094;
+    background: #F5EDE6;
     display: inline-block;
     padding: 2px 12px;
     border-radius: 30px;
@@ -428,7 +430,7 @@ h1, h2, h3, .luxury-font {
 }
 .card-text {
     line-height: 1.5;
-    color: #aaa !important;
+    color: #7A6A5E !important;
     font-size: 0.8rem;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -439,7 +441,7 @@ h1, h2, h3, .luxury-font {
 }
 
 .btn-details {
-    background: #333;
+    background: var(--burgundy);
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -448,9 +450,9 @@ h1, h2, h3, .luxury-font {
     transition: 0.2s;
 }
 .btn-details:hover {
-    background: var(--crimson);
+    background: var(--burgundy-dark);
     color: #fff;
-    box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+    box-shadow: 0 5px 15px rgba(107, 29, 47, 0.3);
 }
 .btn-buy-now {
     background: #25D366;
@@ -475,7 +477,7 @@ h1, h2, h3, .luxury-font {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(13, 13, 13, 0.97);
+    background: rgba(44, 24, 16, 0.92);
     backdrop-filter: blur(12px);
     z-index: 2000;
     display: none;
@@ -491,13 +493,13 @@ h1, h2, h3, .luxury-font {
     opacity: 1;
 }
 .modal-content-lux {
-    background: var(--dark-grey);
+    background: #FFFFFF;
     max-width: 1300px;
     width: 100%;
     border-radius: 32px;
     overflow: hidden;
     animation: modalZoom 0.5s;
-    border: 1px solid rgba(196, 30, 58, 0.2);
+    border: 1px solid rgba(107, 29, 47, 0.1);
 }
 @keyframes modalZoom {
     from {
@@ -514,34 +516,34 @@ h1, h2, h3, .luxury-font {
     top: 20px;
     right: 30px;
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--warm-brown);
     z-index: 10;
     background: none;
     border: none;
     transition: 0.2s;
 }
 .close-modal:hover {
-    color: var(--crimson);
+    color: var(--burgundy);
     transform: rotate(90deg);
 }
 #modalCategory {
-    background: rgba(196, 30, 58, 0.15);
-    color: var(--crimson);
+    background: rgba(107, 29, 47, 0.08);
+    color: var(--burgundy);
 }
 #modalTitle {
-    color: #fff;
+    color: var(--warm-brown);
 }
 #modalDesc {
     white-space: pre-wrap;
     line-height: 1.9;
-    color: #ccc;
+    color: #5A4A3E;
     max-height: 350px;
     overflow-y: auto;
     padding-right: 5px;
     font-size: 0.95rem;
 }
 #modalDesc strong {
-    color: #fff;
+    color: var(--burgundy);
     display: block;
     margin-top: 14px;
     margin-bottom: 4px;
@@ -557,12 +559,13 @@ h1, h2, h3, .luxury-font {
 }
 #modalDesc .bullet-item::before {
     content: "•";
-    color: var(--crimson);
+    color: var(--burgundy);
     position: absolute;
     left: 4px;
 }
 #modalPrice {
     font-size: 1.8rem;
+    color: var(--burgundy);
 }
 #modalBuyNowBtn {
     background: #25D366;
@@ -576,70 +579,72 @@ h1, h2, h3, .luxury-font {
 }
 .modal-content-lux .carousel-control-prev-icon,
 .modal-content-lux .carousel-control-next-icon {
-    background-color: rgba(196, 30, 58, 0.6);
+    background-color: rgba(107, 29, 47, 0.5);
     border-radius: 50%;
     padding: 20px;
     background-size: 50%;
 }
 .modal-content-lux .carousel-indicators button.active {
-    background: var(--crimson);
+    background: var(--burgundy);
 }
 
 /* =========================
    NEWSLETTER
    ========================= */
 .newsletter {
-    background: #111;
-    border-top: 1px solid rgba(196, 30, 58, 0.15);
-    border-bottom: 1px solid rgba(196, 30, 58, 0.15);
+    background: var(--champagne-dark);
+    border-top: 1px solid rgba(107, 29, 47, 0.08);
+    border-bottom: 1px solid rgba(107, 29, 47, 0.08);
 }
 .newsletter h2 {
-    color: #fff;
+    color: var(--warm-brown);
 }
 .newsletter p {
-    color: #aaa;
+    color: #7A6A5E;
 }
 .newsletter .btn-outline-light {
-    border-color: var(--crimson);
-    color: var(--crimson);
+    border-color: var(--burgundy);
+    color: var(--burgundy);
 }
 .newsletter .btn-outline-light:hover {
-    background: var(--crimson);
+    background: var(--burgundy);
     color: #fff;
-    border-color: var(--crimson);
-    box-shadow: 0 5px 20px rgba(196, 30, 58, 0.3);
+    border-color: var(--burgundy);
+    box-shadow: 0 5px 20px rgba(107, 29, 47, 0.25);
 }
 .newsletter .form-control {
-    background: #222 !important;
-    border: 1px solid #333 !important;
-    color: #fff !important;
+    background: #FFFFFF !important;
+    border: 1px solid #D4C4B8 !important;
+    color: var(--warm-brown) !important;
 }
 .newsletter .form-control:focus {
-    border-color: var(--crimson) !important;
-    box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.2);
+    border-color: var(--burgundy) !important;
+    box-shadow: 0 0 0 3px rgba(107, 29, 47, 0.1);
 }
 
 /* =========================
    FOOTER
    ========================= */
 footer {
-    background: #0D0D0D;
-    border-top: 1px solid rgba(196, 30, 58, 0.1);
+    background: var(--warm-brown);
+    color: rgba(255, 255, 255, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 footer a {
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     transition: 0.2s;
 }
 footer a:hover {
-    color: var(--crimson);
+    color: var(--champagne);
 }
 .footer-logo {
     max-height: 40px;
     width: auto;
+    filter: brightness(0) invert(1);
 }
 .text-rose-gold {
-    color: var(--crimson) !important;
+    color: var(--burgundy) !important;
 }
 footer hr {
     opacity: 0.1;
