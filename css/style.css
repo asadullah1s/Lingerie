@@ -1,55 +1,161 @@
+/* ============================================================
+   VELVET NOIR - CRIMSON PASSION THEME
+   Sexy, bold, passionate colors for intimate wear.
+   Primary: #C41E3A (Crimson Red)
+   Accent:  #D4AF37 (Gold)
+   Base:    #0D0D0D (Rich Black)
+   ============================================================ */
+
 /* =========================
    RESET & BASE
    ========================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #0A0A0A;
-    color: #f5f5f5;
+    background-color: #0D0D0D;
+    color: #F8F8F8;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+
 h1, h2, h3, .luxury-font {
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     letter-spacing: 0.02em;
 }
+
+/* =========================
+   COLOR VARIABLES (Crimson Passion)
+   ========================= */
 :root {
-    --rose-gold: #E8A8B8;
-    --gold: #C9A34E;
-    --black: #0A0A0A;
+    --crimson: #C41E3A;
+    --crimson-dark: #8B0000;
+    --crimson-light: #FF6B8A;
+    --gold: #D4AF37;
+    --black: #0D0D0D;
     --dark-grey: #1A1A1A;
-    --soft-white: #f5f5f5;
+    --soft-white: #F8F8F8;
     --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+
+    /* Legacy support for HTML classes */
+    --rose-gold: var(--crimson);
 }
 
 /* =========================
-   SCROLLBAR
+   CUSTOM SCROLLBAR
    ========================= */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #222; }
-::-webkit-scrollbar-thumb { background: var(--rose-gold); border-radius: 10px; }
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #222;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--crimson);
+    border-radius: 10px;
+}
+
+/* =========================
+   SCROLL PROGRESS
+   ========================= */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--crimson);
+    z-index: 9999;
+    transition: width 0.05s linear;
+}
+
+/* =========================
+   BACK TO TOP
+   ========================= */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--crimson);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 99;
+    box-shadow: 0 5px 20px rgba(196, 30, 58, 0.4);
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.back-to-top:hover {
+    background: var(--crimson-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.6);
+}
+
+/* =========================
+   WHATSAPP FLOAT
+   ========================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #25D366;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 28px;
+    z-index: 99;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.whatsapp-float:hover {
+    background: #128C7E;
+    color: #fff;
+    transform: scale(1.05);
+}
 
 /* =========================
    NAVBAR
    ========================= */
 .navbar {
-    background: rgba(10,10,10,0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(12px);
     padding: 0.8rem 0;
     transition: 0.3s;
-    border-bottom: 1px solid rgba(232,168,184,0.1);
+    border-bottom: 1px solid rgba(196, 30, 58, 0.15);
 }
 .navbar.scrolled {
-    background: rgba(10,10,10,0.95);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    background: rgba(13, 13, 13, 0.98);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
 }
 .navbar-brand .brand-text {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--rose-gold);
+    color: var(--crimson);
     margin-left: 8px;
+}
+.navbar-brand img {
+    max-height: 40px;
+    width: auto;
 }
 .nav-link {
     color: #ccc !important;
@@ -59,17 +165,28 @@ h1, h2, h3, .luxury-font {
     position: relative;
     transition: var(--transition);
 }
-.nav-link:hover { color: var(--rose-gold) !important; }
+.nav-link:hover {
+    color: var(--crimson) !important;
+}
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -5px; left: 0;
-    width: 0; height: 2px;
-    background: var(--rose-gold);
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--crimson);
     transition: 0.3s;
 }
-.nav-link:hover::after { width: 100%; }
-.navbar-toggler { border-color: var(--rose-gold); }
+.nav-link:hover::after {
+    width: 100%;
+}
+.navbar-toggler {
+    border-color: var(--crimson);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(196,30,58,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
 
 /* =========================
    VIDEO BANNER (Full Screen)
@@ -83,17 +200,22 @@ h1, h2, h3, .luxury-font {
 }
 .bg-video {
     position: absolute;
-    top: 50%; left: 50%;
-    min-width: 100%; min-height: 100%;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 0;
 }
 .banner-overlay {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(10,10,10,0.45);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Sexy crimson gradient overlay */
+    background: linear-gradient(135deg, rgba(13, 13, 13, 0.75) 0%, rgba(196, 30, 58, 0.25) 50%, rgba(13, 13, 13, 0.6) 100%);
     display: flex;
     align-items: center;
     z-index: 1;
@@ -105,56 +227,121 @@ h1, h2, h3, .luxury-font {
 .banner-overlay .eyebrow {
     font-size: 0.8rem;
     letter-spacing: 5px;
-    color: var(--rose-gold);
-    background: rgba(0,0,0,0.4);
+    color: var(--crimson-light);
+    background: rgba(0, 0, 0, 0.5);
     padding: 0.3rem 1.5rem;
     border-radius: 40px;
     display: inline-block;
     backdrop-filter: blur(4px);
     margin-bottom: 1rem;
+    border: 1px solid rgba(196, 30, 58, 0.3);
 }
 .banner-overlay h1 {
     font-size: 4.5rem;
     color: #fff;
-    text-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.6);
     font-weight: 700;
+}
+.banner-overlay h1 span {
+    color: var(--crimson);
 }
 .banner-overlay p {
     font-size: 1.2rem;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255, 255, 255, 0.85);
     max-width: 500px;
     margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* =========================
+   BUTTONS
+   ========================= */
 .btn-luxury {
     background: transparent;
-    border: 2px solid var(--rose-gold);
+    border: 2px solid var(--crimson);
     color: #fff;
     padding: 12px 40px;
     border-radius: 40px;
     transition: var(--transition);
     text-decoration: none;
     display: inline-block;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.2);
 }
 .btn-luxury:hover {
-    background: var(--rose-gold);
-    color: #111;
-    border-color: var(--rose-gold);
+    background: var(--crimson);
+    color: #fff;
+    border-color: var(--crimson);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(232,168,184,0.3);
+    box-shadow: 0 10px 35px rgba(196, 30, 58, 0.45);
 }
+.btn-luxury i {
+    transition: 0.3s;
+}
+.btn-luxury:hover i {
+    transform: translateX(5px);
+}
+
 .scroll-down {
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 2rem;
     z-index: 2;
     animation: bounce 2s infinite;
 }
 @keyframes bounce {
-    0%,100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(10px); }
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* =========================
+   SEARCH & FILTER
+   ========================= */
+.input-group-text {
+    background: transparent !important;
+}
+.input-group-text i {
+    color: var(--crimson) !important;
+}
+#searchInput {
+    background: transparent !important;
+    color: #fff !important;
+    border-bottom: 2px solid #333 !important;
+    border-radius: 0 !important;
+}
+#searchInput:focus {
+    border-bottom-color: var(--crimson) !important;
+    box-shadow: none !important;
+}
+#searchInput::placeholder {
+    color: #666;
+}
+
+.category-filter-btn {
+    border-color: #444;
+    color: #ccc;
+    transition: var(--transition);
+    background: transparent;
+}
+.category-filter-btn:hover {
+    border-color: var(--crimson);
+    color: var(--crimson);
+}
+.category-filter-btn.active-filter {
+    background: var(--crimson);
+    color: #fff;
+    border-color: var(--crimson);
+    box-shadow: 0 5px 20px rgba(196, 30, 58, 0.35);
 }
 
 /* =========================
@@ -169,64 +356,65 @@ h1, h2, h3, .luxury-font {
 .section-title:after {
     content: '';
     position: absolute;
-    bottom: -12px; left: 0;
-    width: 60px; height: 3px;
-    background: var(--rose-gold);
-}
-
-/* =========================
-   FILTER BUTTONS
-   ========================= */
-.category-filter-btn {
-    border-color: #555;
-    color: #ccc;
-    transition: var(--transition);
-}
-.category-filter-btn:hover,
-.category-filter-btn.active-filter {
-    background: var(--rose-gold);
-    color: #111;
-    border-color: var(--rose-gold);
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--crimson);
+    box-shadow: 0 0 15px rgba(196, 30, 58, 0.3);
 }
 
 /* =========================
    PRODUCT CARDS
    ========================= */
 .product-card {
-    background: #1A1A1A;
+    background: var(--dark-grey);
     border-radius: 20px;
     overflow: hidden;
     transition: var(--transition);
-    border: 1px solid rgba(232,168,184,0.15);
+    border: 1px solid rgba(196, 30, 58, 0.12);
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(232,168,184,0.15);
-    border-color: var(--rose-gold);
+    transform: translateY(-10px);
+    border-color: var(--crimson);
+    box-shadow: 0 25px 50px rgba(196, 30, 58, 0.15);
 }
+
 .card-img-top {
     height: 300px;
     object-fit: cover;
     transition: transform 0.5s;
 }
-.product-card:hover .card-img-top { transform: scale(1.02); }
+.product-card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+.card-body {
+    padding: 1.2rem;
+}
+
 .category-badge {
-    background: rgba(232,168,184,0.15);
-    color: var(--rose-gold);
-    font-size: 0.7rem;
+    background: rgba(196, 30, 58, 0.15);
+    color: var(--crimson);
+    font-size: 0.65rem;
     padding: 4px 14px;
     border-radius: 40px;
     font-weight: 600;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 .price {
     font-weight: 700;
     font-size: 1.3rem;
-    color: var(--rose-gold);
+    color: var(--crimson);
     font-family: 'Inter', sans-serif;
+}
+.card-title {
+    color: #fff;
+    font-size: 1rem;
 }
 .product-code {
     font-size: 0.7rem;
@@ -236,33 +424,58 @@ h1, h2, h3, .luxury-font {
     padding: 2px 12px;
     border-radius: 30px;
     font-weight: 500;
+    margin-top: 2px;
 }
-.btn-details, .btn-buy-now {
-    border-radius: 30px;
+.card-text {
+    line-height: 1.5;
+    color: #aaa !important;
     font-size: 0.8rem;
-    padding: 6px 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 40px;
 }
+
 .btn-details {
     background: #333;
     color: #fff;
     border: none;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    transition: 0.2s;
 }
-.btn-details:hover { background: var(--rose-gold); color: #111; }
+.btn-details:hover {
+    background: var(--crimson);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+}
 .btn-buy-now {
     background: #25D366;
     color: #fff;
     border: none;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    transition: 0.2s;
 }
-.btn-buy-now:hover { background: #128C7E; }
+.btn-buy-now:hover {
+    background: #128C7E;
+    color: #fff;
+}
 
 /* =========================
    MODAL
    ========================= */
 .fullscreen-modal {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(10,10,10,0.95);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.97);
     backdrop-filter: blur(12px);
     z-index: 2000;
     display: none;
@@ -273,22 +486,33 @@ h1, h2, h3, .luxury-font {
     opacity: 0;
     transition: opacity 0.4s;
 }
-.fullscreen-modal.active { display: flex; opacity: 1; }
+.fullscreen-modal.active {
+    display: flex;
+    opacity: 1;
+}
 .modal-content-lux {
-    background: #1A1A1A;
+    background: var(--dark-grey);
     max-width: 1300px;
     width: 100%;
     border-radius: 32px;
     overflow: hidden;
     animation: modalZoom 0.5s;
+    border: 1px solid rgba(196, 30, 58, 0.2);
 }
 @keyframes modalZoom {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 .close-modal {
     position: absolute;
-    top: 20px; right: 30px;
+    top: 20px;
+    right: 30px;
     font-size: 2.5rem;
     color: #fff;
     z-index: 10;
@@ -296,7 +520,17 @@ h1, h2, h3, .luxury-font {
     border: none;
     transition: 0.2s;
 }
-.close-modal:hover { color: var(--rose-gold); }
+.close-modal:hover {
+    color: var(--crimson);
+    transform: rotate(90deg);
+}
+#modalCategory {
+    background: rgba(196, 30, 58, 0.15);
+    color: var(--crimson);
+}
+#modalTitle {
+    color: #fff;
+}
 #modalDesc {
     white-space: pre-wrap;
     line-height: 1.9;
@@ -304,11 +538,13 @@ h1, h2, h3, .luxury-font {
     max-height: 350px;
     overflow-y: auto;
     padding-right: 5px;
+    font-size: 0.95rem;
 }
 #modalDesc strong {
     color: #fff;
     display: block;
     margin-top: 14px;
+    margin-bottom: 4px;
     font-family: 'Playfair Display', serif;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
@@ -321,9 +557,32 @@ h1, h2, h3, .luxury-font {
 }
 #modalDesc .bullet-item::before {
     content: "•";
-    color: var(--rose-gold);
+    color: var(--crimson);
     position: absolute;
     left: 4px;
+}
+#modalPrice {
+    font-size: 1.8rem;
+}
+#modalBuyNowBtn {
+    background: #25D366;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+}
+#modalBuyNowBtn:hover {
+    background: #128C7E;
+    transform: scale(1.02);
+}
+.modal-content-lux .carousel-control-prev-icon,
+.modal-content-lux .carousel-control-next-icon {
+    background-color: rgba(196, 30, 58, 0.6);
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 50%;
+}
+.modal-content-lux .carousel-indicators button.active {
+    background: var(--crimson);
 }
 
 /* =========================
@@ -331,87 +590,161 @@ h1, h2, h3, .luxury-font {
    ========================= */
 .newsletter {
     background: #111;
-    border-top: 1px solid rgba(232,168,184,0.1);
-    border-bottom: 1px solid rgba(232,168,184,0.1);
+    border-top: 1px solid rgba(196, 30, 58, 0.15);
+    border-bottom: 1px solid rgba(196, 30, 58, 0.15);
+}
+.newsletter h2 {
+    color: #fff;
+}
+.newsletter p {
+    color: #aaa;
 }
 .newsletter .btn-outline-light {
-    border-color: var(--rose-gold);
-    color: var(--rose-gold);
+    border-color: var(--crimson);
+    color: var(--crimson);
 }
 .newsletter .btn-outline-light:hover {
-    background: var(--rose-gold);
-    color: #111;
+    background: var(--crimson);
+    color: #fff;
+    border-color: var(--crimson);
+    box-shadow: 0 5px 20px rgba(196, 30, 58, 0.3);
+}
+.newsletter .form-control {
+    background: #222 !important;
+    border: 1px solid #333 !important;
+    color: #fff !important;
+}
+.newsletter .form-control:focus {
+    border-color: var(--crimson) !important;
+    box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.2);
 }
 
 /* =========================
    FOOTER
    ========================= */
 footer {
-    background: #0A0A0A;
-    border-top: 1px solid rgba(232,168,184,0.1);
+    background: #0D0D0D;
+    border-top: 1px solid rgba(196, 30, 58, 0.1);
 }
-footer a { color: #aaa; text-decoration: none; transition: 0.2s; }
-footer a:hover { color: var(--rose-gold); }
-.footer-logo { max-height: 40px; }
-.text-rose-gold { color: var(--rose-gold); }
-
-/* =========================
-   WHATSAPP FLOAT + BACK TO TOP
-   ========================= */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px; left: 30px;
-    background: #25D366;
-    width: 52px; height: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 28px;
-    z-index: 99;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+footer a {
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.2s;
 }
-.whatsapp-float:hover { background: #128C7E; color: #fff; transform: scale(1.05); }
-.back-to-top {
-    position: fixed;
-    bottom: 30px; right: 30px;
-    background: var(--rose-gold);
-    width: 45px; height: 45px;
-    border-radius: 50%;
-    border: none;
-    color: #111;
-    font-size: 1.5rem;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-    z-index: 99;
+footer a:hover {
+    color: var(--crimson);
 }
-.back-to-top.show { opacity: 1; visibility: visible; }
-.back-to-top:hover { background: #d497aa; }
-
-.scroll-progress {
-    position: fixed;
-    top: 0; left: 0;
-    width: 0%; height: 3px;
-    background: var(--rose-gold);
-    z-index: 9999;
+.footer-logo {
+    max-height: 40px;
+    width: auto;
+}
+.text-rose-gold {
+    color: var(--crimson) !important;
+}
+footer hr {
+    opacity: 0.1;
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE STYLES
    ========================= */
+@media (max-width: 992px) {
+    .banner-overlay h1 {
+        font-size: 3.2rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .video-banner { height: 70vh; margin-top: 62px; }
-    .banner-overlay h1 { font-size: 2.8rem; }
-    .banner-overlay p { font-size: 1rem; }
-    .card-img-top { height: 220px; }
-    .section-title { font-size: 1.8rem; }
-    .modal-content-lux .row { min-height: auto; }
-    #modalDesc { max-height: 200px; }
+    .video-banner {
+        height: 70vh;
+        margin-top: 62px;
+    }
+    .banner-overlay h1 {
+        font-size: 2.8rem;
+    }
+    .banner-overlay p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    .card-img-top {
+        height: 220px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .modal-content-lux .row {
+        min-height: auto;
+    }
+    #modalDesc {
+        max-height: 200px;
+        font-size: 0.85rem;
+    }
+    .btn-luxury {
+        padding: 10px 28px;
+        font-size: 0.9rem;
+    }
+    .navbar-brand .brand-text {
+        font-size: 1.2rem;
+    }
+    .close-modal {
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+    }
 }
+
 @media (max-width: 576px) {
-    .banner-overlay h1 { font-size: 2rem; }
-    .btn-luxury { padding: 10px 24px; font-size: 0.9rem; }
+    .video-banner {
+        height: 60vh;
+        margin-top: 56px;
+    }
+    .banner-overlay h1 {
+        font-size: 2rem;
+    }
+    .banner-overlay .eyebrow {
+        font-size: 0.6rem;
+        padding: 0.2rem 1rem;
+    }
+    .banner-overlay p {
+        font-size: 0.85rem;
+    }
+    .btn-luxury {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+    .card-img-top {
+        height: 180px;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .whatsapp-float {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+        bottom: 16px;
+        left: 16px;
+    }
+    .back-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+        bottom: 16px;
+        right: 16px;
+    }
+    .product-card {
+        border-radius: 14px;
+    }
+    .modal-content-lux {
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .banner-overlay h1 {
+        font-size: 1.6rem;
+    }
+    .banner-overlay p {
+        font-size: 0.75rem;
+    }
 }
